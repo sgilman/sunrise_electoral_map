@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title>Sunrise Massachusetts District Maps</title>
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <style>
+		#mapid { height: 100%;}
+   </style>
+   <script src="house.geojson"></script>
+   <script src="senate.geojson"></script>
+   <script src="congress.geojson"></script>
+</head>
+<body>
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   
+<div id="mapid"></div>
+	<script>
+	
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var a = url.searchParams.get("a");
+	console.log(a);
+	
+	var race;
+	var district;
+	var districts_layer;
+	var attribute;
+	var name_attribute;
+	
+	
+	if(a.includes('MA House')) {
+		race = 'house'
+		districts_layer = house_districts;
+		district = a.replace(' MA House', '');
+		attribute = 'REP_DIST';
+		name_attribute = 'REP';
+		} else if (a.includes('MA Senate')) {
+		race = 'senate';
+		districts_layer = senate_districts;
+		district = a.replace(' MA Senate', '');
+		attribute = 'SEN_DIST';
+		name_attribute = 'SENATOR';
+		} else if (a.includes('US Congress')) {
+		districts_layer = congressional_districts;
+		district = district = a.replace(' US Congress', ' Congressional District');
+		race = 'congress';
+		attribute = 'DISTRICT';
+		name_attribute = 'REP';
+		} else {
+		race = 'other'
+		}
+	
+		var map = L.map('mapid').setView([42.371494, -71.826162], 8)
+		L.tileLayer('	https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 18,
+			id: 'mapbox/light-v10',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'pk.eyJ1Ijoic2dpbG1hbiIsImEiOiJLeW5tcVA0In0.GHZbpkIXEhefhIiVGP2pHA'
+}).addTo(map);
+
+var senate_layer = L.geoJSON(districts_layer, {
+    style: style,
+	onEachFeature: onEachFeature
+}).addTo(map);
+
+
+function style(feature) {
+return {
+        fillColor: "#3ae031",
+        weight: 0.5,
+        opacity: 1,
+        color: '#666',
+        fillOpacity: (district == feature.properties[attribute]) ? 0.7 : 0
+    };
+ }
+
+function onEachFeature(feature, layer) {
+    layer.on({
+//        mouseover: highlightFeature
+    });
+	layer.bindPopup('<b>' + feature.properties[attribute] + '</b><br>' + feature.properties[name_attribute]);
+	if (feature.properties[attribute] == district && feature.properties['SHAPEAREA'] < 35720120) {
+		map.setView(layer.getBounds().getCenter(), 11)
+	}
+}
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+};
+	</script>
+
+</body>
+</html>
