@@ -10,6 +10,7 @@
    <script src="house.geojson"></script>
    <script src="senate.geojson"></script>
    <script src="congress.geojson"></script>
+   <script src="sunrise_hubs.geojson"></script>
 </head>
 <body>
 
@@ -70,6 +71,21 @@ var senate_layer = L.geoJSON(districts_layer, {
 	onEachFeature: onEachFeature
 }).addTo(map);
 
+
+var hub_layer = L.geoJSON(sunrise_hubs, {
+	pointToLayer: function(feature, latlng) {
+		var sunriseIcon = L.icon({
+				iconUrl: 'map_icon.jpg',
+				iconSize: [45, 45],
+				iconAnchor: [22, 45],
+				popupAnchor: [0,-45]
+		});
+		return L.marker(latlng, {icon: sunriseIcon});
+	},
+	onEachFeature: function (feature, layer) {
+		layer.bindPopup("Sunrise " + feature.properties.hub_name)
+	}
+}).addTo(map);
 
 function style(feature) {
 return {

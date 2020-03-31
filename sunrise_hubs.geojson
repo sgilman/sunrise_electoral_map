@@ -1,0 +1,31 @@
+var sunrise_hubs = {
+"type": "FeatureCollection",
+"name": "sunrise_hubs",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "hub_name": "Acton", "coords": "42.482750, -71.432782", "lat": 42.48275, "lon": -71.432782 }, "geometry": { "type": "Point", "coordinates": [ -71.432782, 42.48275 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Amherst", "coords": "42.374221, -72.519927", "lat": 42.374221, "lon": -72.519927 }, "geometry": { "type": "Point", "coordinates": [ -72.519927, 42.374221 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Arlington", "coords": "42.416311, -71.157428", "lat": 42.416311, "lon": -71.157428 }, "geometry": { "type": "Point", "coordinates": [ -71.157428, 42.416311 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Blue Hills", "coords": "42.163820, -71.082533", "lat": 42.16382, "lon": -71.082533 }, "geometry": { "type": "Point", "coordinates": [ -71.082533, 42.16382 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Boston", "coords": "42.332163, -71.080860", "lat": 42.332163, "lon": -71.08086 }, "geometry": { "type": "Point", "coordinates": [ -71.08086, 42.332163 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Cape Cod", "coords": "41.662532, -70.307801", "lat": 41.662532, "lon": -70.307801 }, "geometry": { "type": "Point", "coordinates": [ -70.307801, 41.662532 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Carlisle", "coords": "42.528982, -71.349458", "lat": 42.528982, "lon": -71.349458 }, "geometry": { "type": "Point", "coordinates": [ -71.349458, 42.528982 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Easthampton", "coords": "42.268535, -72.670975", "lat": 42.268535, "lon": -72.670975 }, "geometry": { "type": "Point", "coordinates": [ -72.670975, 42.268535 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Hampden Count", "coords": "42.103102, -72.588705", "lat": 42.103102, "lon": -72.588705 }, "geometry": { "type": "Point", "coordinates": [ -72.588705, 42.103102 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Hilltowns", "coords": "42.412510, -72.789709", "lat": 42.41251, "lon": -72.789709 }, "geometry": { "type": "Point", "coordinates": [ -72.789709, 42.41251 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Lexington", "coords": "42.446876, -71.226332", "lat": 42.446876, "lon": -71.226332 }, "geometry": { "type": "Point", "coordinates": [ -71.226332, 42.446876 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Marthas Vineyard", "coords": "41.384498, -70.647342", "lat": 41.384498, "lon": -70.647342 }, "geometry": { "type": "Point", "coordinates": [ -70.647342, 41.384498 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Metrowest", "coords": "42.300920, -71.407059", "lat": 42.30092, "lon": -71.407059 }, "geometry": { "type": "Point", "coordinates": [ -71.407059, 42.30092 ] } },
+{ "type": "Feature", "properties": { "hub_name": "South Hadley", "coords": "42.258847, -72.574876", "lat": 42.258847, "lon": -72.574876 }, "geometry": { "type": "Point", "coordinates": [ -72.574876, 42.258847 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Northampton", "coords": "42.335261, -72.671937", "lat": 42.335261, "lon": -72.671937 }, "geometry": { "type": "Point", "coordinates": [ -72.671937, 42.335261 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Salem", "coords": "42.518811, -70.896213", "lat": 42.518811, "lon": -70.896213 }, "geometry": { "type": "Point", "coordinates": [ -70.896213, 42.518811 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Simon's Rock", "coords": "42.208543, -73.380077", "lat": 42.208543, "lon": -73.380077 }, "geometry": { "type": "Point", "coordinates": [ -73.380077, 42.208543 ] } },
+{ "type": "Feature", "properties": { "hub_name": "South Coast", "coords": "41.623002, -70.989294", "lat": 41.623002, "lon": -70.989294 }, "geometry": { "type": "Point", "coordinates": [ -70.989294, 41.623002 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Tufts", "coords": "42.407255, -71.119898", "lat": 42.407255, "lon": -71.119898 }, "geometry": { "type": "Point", "coordinates": [ -71.119898, 42.407255 ] } },
+{ "type": "Feature", "properties": { "hub_name": "UMass Amherst", "coords": "42.387203, -72.530146", "lat": 42.387203, "lon": -72.530146 }, "geometry": { "type": "Point", "coordinates": [ -72.530146, 42.387203 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Wakefield", "coords": "42.501976, -71.074899", "lat": 42.501976, "lon": -71.074899 }, "geometry": { "type": "Point", "coordinates": [ -71.074899, 42.501976 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Waltham", "coords": "42.375788, -71.235656", "lat": 42.375788, "lon": -71.235656 }, "geometry": { "type": "Point", "coordinates": [ -71.235656, 42.375788 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Westford", "coords": "42.581094, -71.439183", "lat": 42.581094, "lon": -71.439183 }, "geometry": { "type": "Point", "coordinates": [ -71.439183, 42.581094 ] } },
+{ "type": "Feature", "properties": { "hub_name": "Worcester", "coords": "42.261650, -71.802373", "lat": 42.26165, "lon": -71.802373 }, "geometry": { "type": "Point", "coordinates": [ -71.802373, 42.26165 ] } }
+]
+}
